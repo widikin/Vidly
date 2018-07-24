@@ -18,7 +18,28 @@ namespace Vidly.Controllers
                 Name = "Max Well"
             };
 
-            return View();
+            return View(movie);
         }
+
+        public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
+        }
+
+        public ActionResult index(int? pageIndex, string sortBy)
+        {
+            if (!pageIndex.HasValue)
+
+                pageIndex = 1;
+            if (String.IsNullOrWhiteSpace(sortBy))
+                sortBy = "Name";
+            return Content(string.Format("pageIdex={0}&sortBy={1}", pageIndex, sortBy));
+        }
+        [Route("movie/released/{year}/{month}")]
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
+        }
+
     }
 }
