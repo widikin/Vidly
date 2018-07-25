@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -18,7 +19,35 @@ namespace Vidly.Controllers
                 Name = "Max Well"
             };
 
-            return View(movie);
+
+            var  customers = new List<Customer>
+            {
+                new Customer
+                {
+                    Id = 1,
+                    Name = "William"
+                    
+                },
+                new Customer
+                {
+                    Id = 2,
+                    Name = "Huguette"
+                    
+                },
+                new Customer
+                {
+                    Id = 3,
+                    Name = "Widikin"
+                    
+                }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+            return View(viewModel);
         }
 
         public ActionResult Edit(int id)
