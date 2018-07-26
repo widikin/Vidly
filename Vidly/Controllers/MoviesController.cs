@@ -20,27 +20,7 @@ namespace Vidly.Controllers
             };
 
 
-            var  customers = new List<Customer>
-            {
-                new Customer
-                {
-                    Id = 1,
-                    Name = "William"
-                    
-                },
-                new Customer
-                {
-                    Id = 2,
-                    Name = "Huguette"
-                    
-                },
-                new Customer
-                {
-                    Id = 3,
-                    Name = "Widikin"
-                    
-                }
-            };
+            var customers = new List<Customer> { new Customer { Id = 1, Name = "William" }, new Customer { Id = 2, Name = "Huguette" }, new Customer { Id = 3, Name = "Widikin" } };
 
             var viewModel = new RandomMovieViewModel
             {
@@ -55,7 +35,7 @@ namespace Vidly.Controllers
             return Content("id=" + id);
         }
 
-        public ActionResult index(int? pageIndex, string sortBy)
+        public ActionResult Index(int? pageIndex, string sortBy)
         {
             if (!pageIndex.HasValue)
 
