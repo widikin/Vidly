@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                Membership Type
+                Discount Rate
             </th>
         </tr>
     </thead>
@@ -36,7 +36,7 @@
                 @Html.DisplayFor(model=> customer.Name)
             </td>
             <td>
-                @Html.DisplayFor(model => customer.Name)
+                @Html.DisplayFor(model => customer.MembershipType.DiscountRate) %
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit",  new { id = customer.Id }) |
