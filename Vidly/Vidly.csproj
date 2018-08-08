@@ -202,6 +202,18 @@
     <Compile Include="Migrations\201808030418356_UpdateNameOfMembershipType.Designer.cs">
       <DependentUpon>201808030418356_UpdateNameOfMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808060434278_AddMovieToDatabase.cs" />
+    <Compile Include="Migrations\201808060434278_AddMovieToDatabase.Designer.cs">
+      <DependentUpon>201808060434278_AddMovieToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808060447055_PopulateGenre.cs" />
+    <Compile Include="Migrations\201808060447055_PopulateGenre.Designer.cs">
+      <DependentUpon>201808060447055_PopulateGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808070437525_PopulateMovie.cs" />
+    <Compile Include="Migrations\201808070437525_PopulateMovie.Designer.cs">
+      <DependentUpon>201808070437525_PopulateMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -275,6 +287,7 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +326,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808030418356_UpdateNameOfMembershipType.resx">
       <DependentUpon>201808030418356_UpdateNameOfMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808060434278_AddMovieToDatabase.resx">
+      <DependentUpon>201808060434278_AddMovieToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808060447055_PopulateGenre.resx">
+      <DependentUpon>201808060447055_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808070437525_PopulateMovie.resx">
+      <DependentUpon>201808070437525_PopulateMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
