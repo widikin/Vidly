@@ -4,5 +4,14 @@
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2 class="title">@Model.Name</h2>
-<p class="text-primary">@Model.Id</p>
+<ul class="list-group">
+
+    <li class="list-item">Membership Type :@Html.DisplayNameFor(model => model.MembershipType.Name)</li>
+    @if (Model.Birthdate.HasValue)
+    {
+        <li class="list-item">Birthdate :@Html.DisplayNameFor(model => model.Birthdate)</li>
+    }
+   
+</ul>
