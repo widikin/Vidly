@@ -6,7 +6,9 @@
 }
 
 <h2>Movies</h2>
-<a href="" class="btn btn-primary">NEW MOVIE</a>
+<p>
+    @Html.ActionLink("New Movie", "New", "Movies", null, new { @class = "btn btn-primary" })
+</p>
 
 <table class="table table-condensed table-responsive table-striped">
     <thead>

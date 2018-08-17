@@ -5,9 +5,7 @@
 }
 
 
-<p>
-    @Html.ActionLink("Save New", "New")
-</p>
+
 
 @*    <ul class="list-group-item-text">
         @foreach (var customer in Model)
@@ -16,7 +14,13 @@
         }
     </ul>*@
 
-<a href="" class="btn btn-primary">NEW CUSTOMER</a>
+
+
+
+
+<p>
+    @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+</p>
 
 <table class="table table-condensed table-responsive table-striped">
     <thead>
