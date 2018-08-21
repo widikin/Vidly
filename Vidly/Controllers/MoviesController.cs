@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace Vidly.Controllers
 {
@@ -76,7 +77,15 @@ namespace Vidly.Controllers
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
-                _context.Movies.Add(movie);
+                try
+                {
+                    _context.Movies.Add(movie);
+                }
+                catch (DbEntityValidationException e)
+                {
+
+                    Console.WriteLine(e);
+                }
             else
             {
                 var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
