@@ -22,7 +22,7 @@ namespace Vidly.Models
         [Required]
         public DateTime DateAdded { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Number of Movie must be between 1 and 20.")]
         [Display(Name="Number in Stock")]
         public byte NumberInStock { get; set; }
 

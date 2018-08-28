@@ -166,6 +166,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808220446567_TestAdjustment.cs" />
+    <Compile Include="Migrations\201808220446567_TestAdjustment.Designer.cs">
+      <DependentUpon>201808220446567_TestAdjustment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Migrations\201807230502318_InitialCreate.cs" />
     <Compile Include="Models\Migrations\201807230502318_InitialCreate.Designer.cs">
       <DependentUpon>201807230502318_InitialCreate.cs</DependentUpon>
@@ -309,6 +313,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808220446567_TestAdjustment.resx">
+      <DependentUpon>201808220446567_TestAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Models\Migrations\201807230502318_InitialCreate.resx">
       <DependentUpon>201807230502318_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
