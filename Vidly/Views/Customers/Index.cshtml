@@ -22,8 +22,14 @@
     @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
 </p>
 
-<table class="table table-condensed table-responsive table-striped">
-    <thead>
+@if (!Model.Any())
+{
+    <p>We don't have any customers yet.</p>
+}
+else
+{ 
+    <table id="customers" class="table table-condensed table-responsive table-striped">
+        <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -31,24 +37,38 @@
             <th>
                 Memebership Type
             </th>
+            <th>
+                Delete
+            </th>
         </tr>
-    </thead>
-    @foreach (var customer in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(model=> customer.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => customer.MembershipType.Name) 
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit",  new { id = customer.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = customer.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = customer.Id })
-            </td>
+        </thead>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => customer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => customer.MembershipType.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = customer.Id}, new { @class = "btn btn-sm btn-success " }) 
+                    @Html.ActionLink("Details", "Details", new { id = customer.Id }, new { @class = "btn btn-sm btn-primary " }) 
+                    @Html.ActionLink("Delete", "Delete",  new {id = customer.Id},new { @class = "btn btn-sm btn-danger js-delete" })
+                  
+                </td>
 
-        </tr>
-    }
+            </tr>
+        }
 
-</table>
+    </table>
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#customers .js-delete").on("click", function() {
+                confirm("Are you sure you want to delete this customer?");
+            });
+        });
+    </script>
+}
