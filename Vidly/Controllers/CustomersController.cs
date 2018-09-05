@@ -19,9 +19,10 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
 
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
           //  var customers = GetCustomer();
-            return View(customers);
+            //return View(customers); 
+            return View();
         }
 
         protected override void Dispose(bool disposing)
