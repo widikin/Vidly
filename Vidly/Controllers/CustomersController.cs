@@ -7,6 +7,7 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
+    // [Authorize]
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -16,6 +17,7 @@ namespace Vidly.Controllers
             _context= new ApplicationDbContext();
         }
         // GET: Customers
+       // [Authorize]
         public ActionResult Index()
         {
 
